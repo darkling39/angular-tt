@@ -8,6 +8,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ListComponent } from './components/list/list.component';
 import { AddNewComponent } from './components/add-new/add-new.component';
 import { EditComponent } from './components/edit/edit.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditComponent } from './components/edit/edit.component';
     RegistrationComponent,
     ListComponent,
     AddNewComponent,
-    EditComponent
+    EditComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
