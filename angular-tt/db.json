@@ -1,0 +1,11 @@
+{
+    "products":[],
+    "users":[
+        {
+            "id": 1,
+            "login": "admin",
+            "password": "password",
+            "token": "123456790qwerty"
+        }
+    ]
+}
