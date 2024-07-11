@@ -39,6 +39,11 @@ export class AuthService {
     ).subscribe(data => console.log(data))
   }
 
+  registerUser(user: IUser){
+    user.token = this.makeRandom()
+    this.httpService.postUser(user).subscribe()
+  }
+
   makeRandom() {
     const possible: string =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890,./;'[]=-)(*&^%$#@!~`";

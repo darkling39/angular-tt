@@ -6,13 +6,14 @@ import { ListComponent } from './components/list/list.component';
 import { EditComponent } from './components/edit/edit.component';
 import { AddNewComponent } from './components/add-new/add-new.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'list', component: ListComponent},
-  {path: 'edit', component: EditComponent},
-  {path: 'add-new', component: AddNewComponent},
+  {path: 'list', component: ListComponent, canActivate:[authGuard]},
+  {path: 'edit', component: EditComponent, canActivate:[authGuard]},
+  {path: 'add-new', component: AddNewComponent, canActivate:[authGuard]},
   {path: 'not-found', component: NotFoundComponent},
   {path: '', redirectTo: 'login', pathMatch:'full'},
   {path: '**', redirectTo: 'not-found', pathMatch:'full'}

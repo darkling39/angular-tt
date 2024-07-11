@@ -18,7 +18,7 @@ export class HttpService {
   getSingleUser(id: number): Observable<IUser>{
     return this.http.get<IUser>(`${this.urlUsers}/${id}`)
   }
-  postUser(user: IUser): void{
-    this.http.post(this.urlUsers, user)
+  postUser(user: IUser): Observable<IUser>{
+    return this.http.post<IUser>(this.urlUsers, user)
   }
 }

@@ -1,24 +1,26 @@
-<div 
-    class="flex flex-col items-center justify-center h-[100vh] gap-60">
-    <h1 class="text-5xl font-bold">Login</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
-        <div 
-            class="flex flex-col gap-5 font-extralight w-full px-5">
-            <input 
-                class="py-5 pl-6 rounded-full text-2xl bg-zinc-700 placeholder-zinc-500" 
-                placeholder="Login" 
-                type="text"
-                formControlName="login">
-            <input 
-                class="py-5 pl-6 rounded-full text-2xl bg-zinc-700 placeholder-zinc-500" 
-                placeholder="Password" 
-                type="text"
-                formControlName="password">
-            <button 
-                class="font-bold text-2xl w-full py-5 bg-color1 rounded-full"
-                type="submit"
-            >Login</button>
-            <p class="text-center "><a routerLink="../registration">Registration</a></p>
-        </div>
-    </form>
+<div class="md:max-w-7xl mx-auto">
+    <div 
+        class="flex flex-col items-center justify-center h-[100vh] gap-60 min-w-fit">
+        <h1 class="text-5xl font-bold">Login</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+            <div 
+                class="flex flex-col gap-5 font-extralight w-full px-5">
+                <input 
+                    class="py-5 pl-6 rounded-full text-2xl bg-zinc-700 placeholder-zinc-500" 
+                    placeholder="Login" 
+                    type="text"
+                    formControlName="login">
+                <input 
+                    class="py-5 pl-6 rounded-full text-2xl bg-zinc-700 placeholder-zinc-500" 
+                    placeholder="Password" 
+                    type="text"
+                    formControlName="password">
+                <button 
+                    class="font-bold text-2xl w-full py-5 bg-color1 rounded-full"
+                    type="submit"
+                >Login</button>
+                <p class="text-center "><a routerLink="../registration">Registration</a></p>
+            </div>
+        </form>
+    </div>
 </div>
