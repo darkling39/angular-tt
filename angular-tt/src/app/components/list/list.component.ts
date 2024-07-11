@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent {
+export class ListComponent implements OnInit{
 
+  constructor(private http: HttpService) {}
+
+  adminToken = localStorage.getItem('token') === '123456790qwerty' ? true : false
+
+
+
+  ngOnInit(): void {
+    console.log(this.adminToken);
+    
+  }
 }

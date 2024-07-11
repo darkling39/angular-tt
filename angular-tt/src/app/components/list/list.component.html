@@ -1,1 +1,20 @@
-<p>list works!</p>
+<div class="flex flex-col items-center mt-20 gap-10">
+    <div class="flex flex-row gap-4 ">
+        <h1 class="text-5xl font-bold">List</h1>
+        <button 
+            routerLink="../add-new"
+            class="text-2xl items-center flex flex-row px-5 py-3 bg-zinc-700 rounded-full" 
+            *ngIf="adminToken">New 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mt-1 ml-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </button>
+        </div>
+        <input 
+            class="py-5 pl-6 rounded-full min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500" 
+            type="text"
+            placeholder="Search">
+    <div>
+        <div></div>
+    </div>
+</div>

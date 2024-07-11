@@ -1,1 +1,31 @@
-<p>add-new works!</p>
+<div>
+    <h1 class="w-full text-center text-5xl font-bold my-20">Add new</h1>
+    <form [formGroup]="addNewForm" (ngSubmit)="submitForm()">
+        <div class="flex flex-col gap-10 justify-center w-full p-5">
+            <input 
+            placeholder="Date" 
+            class="py-5 pl-6 rounded-full min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500"  
+            type="text"
+            formControlName="date">
+            <input 
+            placeholder="Time" 
+            class="py-5 pl-6 rounded-full min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500"  
+            type="text"
+            formControlName="time">
+            <textarea 
+            placeholder="Note" 
+            class="py-5 pl-6 rounded-3xl min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500 min-h-56" 
+            formControlName="note"
+            name="" 
+            id=""></textarea>
+            <div class="flex flex-row gap-4 justify-start  text-start items-center">
+                <input name="isComplete" type="checkbox"  class="h-6 w-6">
+                <label class="text-2xl" for="isComplete">Is complete</label>
+            </div>
+            <button 
+            class="font-bold text-2xl w-full py-5 bg-color1 rounded-full"
+            type="submit"
+            >Create</button>
+        </div>
+    </form>
+</div>

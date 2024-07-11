@@ -41,7 +41,7 @@ export class AuthService {
 
   registerUser(user: IUser){
     user.token = this.makeRandom()
-    this.httpService.postUser(user).subscribe()
+    this.httpService.postUser(user)
   }
 
   makeRandom() {

@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.value){
       this.auth.logIn(this.loginForm.value)
     }
-    console.log('clicked');
   }
 
   ngOnInit(): void {
