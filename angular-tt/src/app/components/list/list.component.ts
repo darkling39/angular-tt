@@ -10,8 +10,8 @@ export class ListComponent implements OnInit{
 
   constructor(private http: HttpService) {}
 
+  term: string = ''
   adminToken = localStorage.getItem('token') === '123456790qwerty' ? true : false
-
   $tasks = this.http.getAllTasks()
     
 

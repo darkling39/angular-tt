@@ -13,9 +13,10 @@
         <input 
             class="py-5 pl-6 rounded-full min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500" 
             type="text"
-            placeholder="Search">
+            placeholder="Search"
+            [(ngModel)]="term">
         <div *ngIf="$tasks | async as tasks" class="">
-            <div *ngFor="let task of tasks">
+            <div *ngFor="let task of tasks | filter: term">
                 <div
                 [routerLink]="['../edit', task.id]"
                 [ngClass]="task.done === true ? 'bg-color3' : 'bg-color2'"

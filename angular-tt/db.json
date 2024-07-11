@@ -6,6 +6,20 @@
       "hours": "13:52",
       "message": "I was working on new angular features",
       "done": false
+    },
+    {
+      "id": "ce87",
+      "date": "12.07.2024",
+      "hours": "1:37",
+      "message": "Testing search",
+      "done": false
+    },
+    {
+      "id": "c438",
+      "date": "12.07",
+      "hours": "1:38",
+      "message": "Testing filter pipe",
+      "done": false
     }
   ],
   "users": [

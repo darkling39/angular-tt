@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalComponent } from './components/modal/modal.component';
+import { HighlightPipe } from './pipes/highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ModalComponent } from './components/modal/modal.component';
     EditComponent,
     NotFoundComponent,
     FilterPipe,
-    ModalComponent
+    ModalComponent,
+    HighlightPipe,
   ],
   imports: [
     BrowserModule,
