@@ -11,6 +11,9 @@ import { AddNewComponent } from './components/add-new/add-new.component';
 import { EditComponent } from './components/edit/edit.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListComponent,
     AddNewComponent,
     EditComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FilterPipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,7 +16,8 @@
             placeholder="Search">
         <div *ngIf="$tasks | async as tasks" class="">
             <div *ngFor="let task of tasks">
-                <div 
+                <div
+                [routerLink]="['../edit', task.id]"
                 [ngClass]="task.done === true ? 'bg-color3' : 'bg-color2'"
                 class="min-w-96 shadow-md bg-color2 rounded-md p-2 text-3xl text-wrap mb-3">
                     <h1>{{task.message}}</h1>

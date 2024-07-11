@@ -33,7 +33,7 @@ export class HttpService {
   getAllTasks(): Observable<ITask[]>{
     return this.http.get<ITask[]>(this.urlTasks)
   }
-  getSingleTask(id: number): Observable<ITask>{
+  getSingleTask(id: string): Observable<ITask>{
     return this.http.get<ITask>(`${this.urlTasks}/${id}`)
   }
   postTask(task: ITask): Observable<ITask>{
@@ -44,6 +44,9 @@ export class HttpService {
       `${this.urlTasks}/${task.id}`,
       task
     );
+  }
+  deleteTask(id:string){
+    return this.http.delete<any>(`${this.urlTasks}/${id}`);
   }
 
 }

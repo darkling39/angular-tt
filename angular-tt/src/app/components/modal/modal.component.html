@@ -1,0 +1,12 @@
+<div 
+[ngClass]="state === 'visible'? 'opacity-1 transition-all ease-in-out duration-500' : 'opacity-0 transition-all ease-in-out duration-500'"
+class="text-black bg-gray-300 max-w-fit p-5 rounded-md absolute left-0 right-0 m-auto top-0 bottom-0 max-h-fit">
+    <div>
+        <h1 class="w-full text-3xl">Delete task</h1>
+        <p>Are you sure you want to delete a task?</p>
+    </div>
+    <div class="flex flex-row text-gray-300 gap-2 justify-end mt-10">
+        <button (click)="modalAnswer('yes')" class="px-6 py-1 rounded-full bg-color2">Yes</button>
+        <button (click)="modalAnswer('no')" class="px-6 py-1 rounded-full bg-color1">No</button>
+    </div>
+</div>
