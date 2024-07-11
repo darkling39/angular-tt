@@ -3,8 +3,22 @@
     {
       "id": "9474",
       "date": "11.07.2024",
-      "time": "13:52",
-      "note": "I was working on new angular features"
+      "hours": "13:52",
+      "message": "I was working on new angular features"
+    },
+    {
+      "id": "18c8",
+      "date": "11.07.2024",
+      "hours": "17:36",
+      "message": "Testing date",
+      "done": false
+    },
+    {
+      "id": "6d8e",
+      "date": "11.07.2024",
+      "hours": "17:43",
+      "message": "Testing Green light",
+      "done": true
     }
   ],
   "users": [

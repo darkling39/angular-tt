@@ -12,10 +12,10 @@ export class ListComponent implements OnInit{
 
   adminToken = localStorage.getItem('token') === '123456790qwerty' ? true : false
 
-
+  $tasks = this.http.getAllTasks()
+    
 
   ngOnInit(): void {
     console.log(this.adminToken);
-    
   }
 }

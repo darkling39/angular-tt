@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center mt-20 gap-10">
+<div class="flex flex-col items-center mt-20 gap-10 px-4">
     <div class="flex flex-row gap-4 ">
         <h1 class="text-5xl font-bold">List</h1>
         <button 
@@ -14,7 +14,19 @@
             class="py-5 pl-6 rounded-full min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500" 
             type="text"
             placeholder="Search">
-    <div>
-        <div></div>
-    </div>
+        <div *ngIf="$tasks | async as tasks" class="">
+            <div *ngFor="let task of tasks">
+                <div 
+                [ngClass]="task.done === true ? 'bg-color3' : 'bg-color2'"
+                class="min-w-96 shadow-md bg-color2 rounded-md p-2 text-3xl text-wrap mb-3">
+                    <h1>{{task.message}}</h1>
+                    <div class="flex flex-row justify-between mt-10 text-zinc-500 text-xl">
+                        <h1>{{task.hours}}</h1>
+                        <h1>{{task.date | date}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
 </div>

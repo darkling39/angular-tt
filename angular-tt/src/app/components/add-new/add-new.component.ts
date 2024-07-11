@@ -22,9 +22,10 @@ export class AddNewComponent implements OnInit{
   }
   ngOnInit(): void {
     this.addNewForm = new FormGroup({
-      date: new FormControl(''),
-      time: new FormControl(''),
-      note: new FormControl('')
+      date: new FormControl<Date | null>(null),
+      hours: new FormControl(''),
+      message: new FormControl(''),
+      done: new FormControl<boolean>(false)
     })
   }
 }

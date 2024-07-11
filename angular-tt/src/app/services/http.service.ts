@@ -14,6 +14,9 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
+
+// Users
+
   getAllUsers(): Observable<IUser[]>{
     return this.http.get<IUser[]>(this.urlUsers)
   }
@@ -24,6 +27,9 @@ export class HttpService {
     return this.http.post<IUser>(this.urlUsers, user)
   }
 
+
+//Tasks
+
   getAllTasks(): Observable<ITask[]>{
     return this.http.get<ITask[]>(this.urlTasks)
   }
@@ -32,6 +38,12 @@ export class HttpService {
   }
   postTask(task: ITask): Observable<ITask>{
     return this.http.post<ITask>(this.urlTasks, task)
+  }
+  updateTask(task: ITask) {
+    return this.http.put<ITask>(
+      `${this.urlTasks}/${task.id}`,
+      task
+    );
   }
 
 }
