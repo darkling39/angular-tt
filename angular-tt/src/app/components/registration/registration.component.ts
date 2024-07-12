@@ -7,30 +7,41 @@ import { PasswordService } from 'src/app/services/password.service';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
 })
-export class RegistrationComponent implements OnInit{
+export class RegistrationComponent implements OnInit {
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private pass: PasswordService
+  ) {}
 
-    constructor(private auth: AuthService, private router: Router, private pass: PasswordService){}
-
-  regForm!: FormGroup
-  passQuality: string = ''
-  currentPass: string 
-  submitForm(){
-    if(this.regForm.value){
-      this.auth.registerUser(this.regForm.value)
+  regForm!: FormGroup;
+  passQuality: string = '';
+  currentPass: string;
+  submitForm() {
+    if (this.regForm.value) {
+      this.auth.registerUser(this.regForm.value);
       this.router.navigate(['../login']);
     }
   }
   ngOnInit(): void {
     this.regForm = new FormGroup({
-      login: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)])
-    })
-    this.regForm.get('password')?.valueChanges.subscribe(pass => {
-      this.currentPass = pass
-      this.passQuality = this.pass.updateQuality(this.regForm, this.passQuality)
-      
-    })
+      login: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+    });
+    this.regForm.get('password')?.valueChanges.subscribe((pass) => {
+      this.currentPass = pass;
+      this.passQuality = this.pass.updateQuality(
+        this.regForm,
+        this.passQuality
+      );
+    });
   }
 }

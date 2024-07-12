@@ -38,7 +38,7 @@ export class AuthService {
           }
         })
       })
-    ).subscribe(data => console.log(data))
+    ).subscribe()
   }
 
   registerUser(user: IUser){

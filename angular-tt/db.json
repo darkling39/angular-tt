@@ -1,14 +1,6 @@
 {
   "tasks": [
     {
-      "date": "12.07.2024",
-      "hours": "13:14",
-      "message": "testing view (admin)",
-      "done": false,
-      "creator": "admin",
-      "id": "63e6"
-    },
-    {
       "id": "71b2",
       "date": "12.07.2024",
       "hours": "12:46",
@@ -29,12 +21,6 @@
       "login": "axioma",
       "password": "12345",
       "token": "XH[G7M5J!@JR(2~"
-    },
-    {
-      "id": "bcf8",
-      "login": "mafiozi1994w",
-      "password": "guessMyPass18",
-      "token": "]5CSP6~NT;0@YNB"
     }
   ]
 }

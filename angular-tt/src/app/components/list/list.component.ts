@@ -6,21 +6,23 @@ import { HttpService } from 'src/app/services/http.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
 })
-export class ListComponent implements OnInit{
+export class ListComponent implements OnInit {
+  constructor(private http: HttpService, private route: ActivatedRoute) {}
 
-  constructor(private http: HttpService, private route:ActivatedRoute) {}
-  
-  adminToken = localStorage.getItem('username') === 'admin'? true : false
-  term: string = ''
-  $tasks = this.http.getAllTasks().pipe(map(list => {
-    if(localStorage.getItem('username') === 'admin'){
-      return list
-    }
-    return list.filter(item => item.creator === localStorage.getItem('username'))
-  }))
+  adminToken = localStorage.getItem('username') === 'admin' ? true : false;
+  term: string = '';
+  $tasks = this.http.getAllTasks().pipe(
+    map((list) => {
+      if (localStorage.getItem('username') === 'admin') {
+        return list;
+      }
+      return list.filter(
+        (item) => item.creator === localStorage.getItem('username')
+      );
+    })
+  );
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

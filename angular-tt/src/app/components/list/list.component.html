@@ -1,35 +1,32 @@
 <div class="flex flex-col items-center mt-20 gap-10 px-4">
     <div class="flex flex-row gap-4 ">
         <h1 class="text-5xl font-bold">List</h1>
-        <button 
-            routerLink="../add-new"
-            class="text-2xl items-center flex flex-row px-5 py-3 bg-zinc-700 rounded-full" 
-            *ngIf="!adminToken">New 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mt-1 ml-2">
+        <button routerLink="../add-new" class="text-2xl items-center flex flex-row px-5 py-3 bg-zinc-700 rounded-full"
+            *ngIf="!adminToken">New
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6 mt-1 ml-2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-          </button>
-        </div>
-        <input 
-            class="py-5 pl-6 rounded-full min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500" 
-            type="text"
-            placeholder="Search"
-            [(ngModel)]="term">
-        <div *ngIf="$tasks | async as tasks" class="">
-            <div *ngFor="let task of tasks | filter: term">
-                <h1 *ngIf="adminToken" class="text-lg mb-1 mt-2">User: {{task.creator}}</h1>
-                <div
-                [routerLink]="['../edit', task.id]"
-                [ngClass]="task.done === true ? 'bg-color3' : 'bg-color2'"
+        </button>
+    </div>
+    <input 
+        class="py-5 pl-6 rounded-full min-w-96 text-2xl bg-zinc-700 placeholder-zinc-500" 
+        type="text"
+        placeholder="Search" 
+        [(ngModel)]="term">
+    <div *ngIf="$tasks | async as tasks" class="">
+        <div *ngFor="let task of tasks | filter: term">
+            <h1 *ngIf="adminToken" class="text-lg mb-1 mt-2">User: {{task.creator}}</h1>
+            <div [routerLink]="['../edit', task.id]" [ngClass]="task.done === true ? 'bg-color3' : 'bg-color2'"
                 class="min-w-96 shadow-md bg-color2 rounded-md p-2 text-3xl text-wrap mb-3">
-                    <h1>{{task.message}}</h1>
-                    <div class="flex flex-row justify-between mt-10 text-zinc-500 text-xl">
-                        <h1>{{task.hours}}</h1>
-                        <h1>{{task.date | date}}</h1>
-                    </div>
+                <h1>{{task.message}}</h1>
+                <div class="flex flex-row justify-between mt-10 text-zinc-500 text-xl">
+                    <h1>{{task.hours}}</h1>
+                    <h1>{{task.date | date}}</h1>
                 </div>
             </div>
         </div>
-            
+    </div>
+
 
 </div>

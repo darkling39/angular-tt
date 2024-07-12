@@ -8,16 +8,19 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent {
-  constructor(private http: HttpService, private route: ActivatedRoute, private router: Router) {}
-  @Input() state: string
-  @Input() id: string
+  constructor(
+    private http: HttpService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+  @Input() state: string;
+  @Input() id: string;
 
-  modalAnswer(answer: string){
-    if(answer === 'yes'){
-      this.http.deleteTask(this.id).subscribe()
+  modalAnswer(answer: string) {
+    if (answer === 'yes') {
+      this.http.deleteTask(this.id).subscribe();
     }
-    this.state = 'hidden'
-    console.log(this.state);
-    this.router.navigate(['../list'])
+    this.state = 'hidden';
+    this.router.navigate(['../list']);
   }
 }

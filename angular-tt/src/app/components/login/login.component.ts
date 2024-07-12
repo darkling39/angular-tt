@@ -10,19 +10,22 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private http: HttpService, private auth: AuthService, private router:Router) {}
+  constructor(
+    private http: HttpService,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   $users = this.http.getAllUsers().subscribe();
   loginForm!: FormGroup;
-  invalidData = false
-  submitForm(){
-    if(this.loginForm.value){
-      this.auth.logIn(this.loginForm.value)
-      if(!this.auth.isLoggedIn()){
-        this.invalidData = true
-      }
-      else{
-        this.invalidData = false
+  invalidData = false;
+  submitForm() {
+    if (this.loginForm.value) {
+      this.auth.logIn(this.loginForm.value);
+      if (!this.auth.isLoggedIn()) {
+        this.invalidData = true;
+      } else {
+        this.invalidData = false;
       }
     }
   }
@@ -30,13 +33,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       login: new FormControl('', [Validators.required]),
-      password: new FormControl('', [
-        Validators.required
-      ]),
+      password: new FormControl('', [Validators.required]),
     });
 
-    if(this.auth.isLoggedIn()){
-      this.router.navigate(['../list'])
+    if (this.auth.isLoggedIn()) {
+      this.router.navigate(['../list']);
     }
   }
 }
