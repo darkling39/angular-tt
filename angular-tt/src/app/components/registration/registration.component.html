@@ -10,12 +10,21 @@
                 type="text"
                 formControlName="login">
             <input 
-                class="py-5 pl-6 rounded-full text-2xl bg-zinc-700 placeholder-zinc-500" 
+                class="py-5 pl-6 rounded-full text-2xl bg-zinc-700 placeholder-zinc-500 text-gray-300" 
                 placeholder="Password" 
-                type="text"
-                formControlName="password">
+                type="password"
+                formControlName="password"
+                [ngClass]="{
+                    'outline outline-gray-500': passQuality === 'absent' && this.regForm.get('password')?.touched,
+                    'outline outline-white': passQuality === 'little',
+                    'outline outline-red-500': passQuality === 'weak',
+                    'outline outline-yellow-500': passQuality === 'medium',
+                    'outline outline-green-500': passQuality === 'strong'
+            }"
+>
             <button 
-                class="font-bold text-2xl w-full py-5 bg-color1 rounded-full"
+                class="font-bold text-2xl w-full py-5 bg-color1 rounded-full disabled:bg-color2"
+                [disabled]="regForm.invalid"
                 type="submit"
             >Create Accout</button>
             <p class="text-center">Already has an account? <a routerLink="../login" class="underline">Log In</a></p>

@@ -12,6 +12,7 @@ export class AuthService {
 
   constructor(private httpService: HttpService, private router: Router) { }
 
+
   setToken(token: string, userLogin: string): void{
     localStorage.setItem('token', token)
     localStorage.setItem('username', userLogin)
@@ -25,8 +26,6 @@ export class AuthService {
   logIn(user: IUser){
     this.httpService.getAllUsers().pipe(
       map(list => {
-        console.log(list);
-        
         list.map(item => {
           if(
             item.login === user.login &&
@@ -35,6 +34,8 @@ export class AuthService {
             this.setToken(item.token, item.login)
             this.router.navigate(['../list'])
           }
+          else{
+          }
         })
       })
     ).subscribe(data => console.log(data))
@@ -42,7 +43,7 @@ export class AuthService {
 
   registerUser(user: IUser){
     user.token = this.makeRandom()
-    this.httpService.postUser(user)
+    this.httpService.postUser(user).subscribe()
   }
 
   makeRandom() {

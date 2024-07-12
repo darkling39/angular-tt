@@ -14,11 +14,16 @@ export class LoginComponent implements OnInit {
 
   $users = this.http.getAllUsers().subscribe();
   loginForm!: FormGroup;
-
-
+  invalidData = false
   submitForm(){
     if(this.loginForm.value){
       this.auth.logIn(this.loginForm.value)
+      if(!this.auth.isLoggedIn()){
+        this.invalidData = true
+      }
+      else{
+        this.invalidData = false
+      }
     }
   }
 

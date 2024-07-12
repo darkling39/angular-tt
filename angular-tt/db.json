@@ -1,28 +1,20 @@
 {
   "tasks": [
     {
-      "id": "c96e",
-      "date": "12.07.2024",
-      "hours": "12:46",
-      "message": "Testing login view",
-      "done": false,
-      "creator": "axioma"
-    },
-    {
-      "id": "28ec",
-      "date": "12.07.2024",
-      "hours": "13:13",
-      "message": "TEsting view (axioma)",
-      "done": true,
-      "creator": "axioma"
-    },
-    {
-      "id": "63e6",
       "date": "12.07.2024",
       "hours": "13:14",
       "message": "testing view (admin)",
+      "done": false,
+      "creator": "admin",
+      "id": "63e6"
+    },
+    {
+      "id": "71b2",
+      "date": "12.07.2024",
+      "hours": "12:46",
+      "message": "Testing login view",
       "done": true,
-      "creator": "admin"
+      "creator": "axioma"
     }
   ],
   "users": [
@@ -37,6 +29,12 @@
       "login": "axioma",
       "password": "12345",
       "token": "XH[G7M5J!@JR(2~"
+    },
+    {
+      "id": "bcf8",
+      "login": "mafiozi1994w",
+      "password": "guessMyPass18",
+      "token": "]5CSP6~NT;0@YNB"
     }
   ]
 }
