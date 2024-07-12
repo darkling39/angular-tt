@@ -8,6 +8,7 @@ import { AddNewComponent } from './components/add-new/add-new.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { authGuard } from './guards/auth.guard';
 import { taskResolver } from './resolvers/task.resolver';
+import { usernameResolver } from './resolvers/username.resolver';
 import { adminGuard } from './guards/admin.guard';
 
 const routes: Routes = [

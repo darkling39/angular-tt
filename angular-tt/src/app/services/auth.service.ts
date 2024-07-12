@@ -12,8 +12,9 @@ export class AuthService {
 
   constructor(private httpService: HttpService, private router: Router) { }
 
-  setToken(token: string): void{
+  setToken(token: string, userLogin: string): void{
     localStorage.setItem('token', token)
+    localStorage.setItem('username', userLogin)
   }
   getToken(): string | null{
     return localStorage.getItem('token')
@@ -31,7 +32,7 @@ export class AuthService {
             item.login === user.login &&
             item.password === user.password
           ){
-            this.setToken(item.token)
+            this.setToken(item.token, item.login)
             this.router.navigate(['../list'])
           }
         })

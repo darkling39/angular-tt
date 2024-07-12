@@ -3,5 +3,6 @@ export interface ITask{
     date: Date,
     hours: number,
     message: string,
-    done: boolean
+    done: boolean,
+    creator: string
 }

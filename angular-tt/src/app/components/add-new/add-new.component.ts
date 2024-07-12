@@ -25,7 +25,8 @@ export class AddNewComponent implements OnInit{
       date: new FormControl<Date | null>(null),
       hours: new FormControl(''),
       message: new FormControl(''),
-      done: new FormControl<boolean>(false)
+      done: new FormControl<boolean>(false),
+      creator: new FormControl(localStorage.getItem('username'))
     })
   }
 }

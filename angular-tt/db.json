@@ -1,25 +1,28 @@
 {
   "tasks": [
     {
-      "id": "88d8",
-      "date": "11.07.2024",
-      "hours": "13:52",
-      "message": "I was working on new angular features",
-      "done": false
-    },
-    {
-      "id": "ce87",
+      "id": "c96e",
       "date": "12.07.2024",
-      "hours": "1:37",
-      "message": "Testing search",
-      "done": false
+      "hours": "12:46",
+      "message": "Testing login view",
+      "done": false,
+      "creator": "axioma"
     },
     {
-      "id": "c438",
-      "date": "12.07",
-      "hours": "1:38",
-      "message": "Testing filter pipe",
-      "done": false
+      "id": "28ec",
+      "date": "12.07.2024",
+      "hours": "13:13",
+      "message": "TEsting view (axioma)",
+      "done": true,
+      "creator": "axioma"
+    },
+    {
+      "id": "63e6",
+      "date": "12.07.2024",
+      "hours": "13:14",
+      "message": "testing view (admin)",
+      "done": true,
+      "creator": "admin"
     }
   ],
   "users": [

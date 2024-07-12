@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -8,14 +10,17 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class ListComponent implements OnInit{
 
-  constructor(private http: HttpService) {}
-
+  constructor(private http: HttpService, private route:ActivatedRoute) {}
+  
+  adminToken = localStorage.getItem('username') === 'admin'? true : false
   term: string = ''
-  adminToken = localStorage.getItem('token') === '123456790qwerty' ? true : false
-  $tasks = this.http.getAllTasks()
-    
+  $tasks = this.http.getAllTasks().pipe(map(list => {
+    if(localStorage.getItem('username') === 'admin'){
+      return list
+    }
+    return list.filter(item => item.creator === localStorage.getItem('username'))
+  }))
 
   ngOnInit(): void {
-    console.log(this.adminToken);
   }
 }

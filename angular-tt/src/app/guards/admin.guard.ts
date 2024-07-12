@@ -3,7 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const adminGuard: CanActivateFn = (route, state) => {
   const rotuer = inject(Router)
-  if(localStorage.getItem('token') === '123456790qwerty'){
+  if(localStorage.getItem('username') != 'admin'){
     return true 
   }
   rotuer.navigate(['../list'])
