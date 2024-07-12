@@ -22,9 +22,8 @@ export class EditComponent implements OnInit{
 
   submitForm(){
     if(this.editForm.value){
-      this.http.postTask(this.editForm.value).subscribe((data) => {
+      this.http.updateTask(this.editForm.value, this.id).subscribe((data) => {
         console.log(data);
-        this.http.deleteTask(this.id).subscribe()
         this.router.navigate(['../list'])
       })
     }
@@ -40,7 +39,8 @@ export class EditComponent implements OnInit{
       date: new FormControl<Date | null>(null),
       hours: new FormControl(''),
       message: new FormControl(''),
-      done: new FormControl<boolean>(false)
+      done: new FormControl<boolean>(false),
+      creator: new FormControl()
     })
 
     this.$task.subscribe((data:ITask) => {
@@ -48,7 +48,8 @@ export class EditComponent implements OnInit{
         date: data.date,
         hours: data.hours,
         message: data.message,
-        done: data.done
+        done: data.done,
+        creator: data.creator
       })
     })
   }

@@ -39,9 +39,9 @@ export class HttpService {
   postTask(task: ITask): Observable<ITask>{
     return this.http.post<ITask>(this.urlTasks, task)
   }
-  updateTask(task: ITask) {
+  updateTask(task: ITask, id:string) {
     return this.http.put<ITask>(
-      `${this.urlTasks}/${task.id}`,
+      `${this.urlTasks}/${id}`,
       task
     );
   }
